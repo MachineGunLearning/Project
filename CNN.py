@@ -1,1 +1,2 @@
 # test class
+print("Hei")
