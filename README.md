@@ -1,16 +1,15 @@
 # Project
 This project is one of the deliverables in the couse TDT4173 - Machine Learning at NTNU. 
 
-The purpose of this project is the academic learning of adressing a machine learning task, training and evaluating a model. 
+The purpose of this project is the academic learning of adressing a machine learning task.
 
 ## Running the application 
 You can run and test the code with a Virtual Machine or iPhyton notebook. 
 
-To run the application you have to download the dataset(locally or in the cloud).
-Dowload the dataset from kaggle: 
+To run the application you have to download the dataset from kaggle:
 https://www.kaggle.com/ciplab/real-and-fake-face-detection
 
-Fetch the dataset when downloaded to google cloud: 
+### Fetch the dataset
 
 When saving the dataset on google drive you can access it in Google Colab with the following code: 
 
@@ -18,7 +17,7 @@ When saving the dataset on google drive you can access it in Google Colab with t
 
 ```
 from google.colab import drive
-drive.mount('/content/drive', force_remount=True
+drive.mount('/content/drive', force_remount=True)
 ```
 
 2. Open the link
