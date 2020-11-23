@@ -1,7 +1,7 @@
 # Project
-This project is one of the deliverables in the couse TDT4173 - Machine Learning at NTNU. 
+This project is one of the deliverables in the couse TDT4173 - Machine Learning at NTNU conducted by a group of three students. 
 \
-The final deliverable is a **CNN model built to classify real and artificial images of human faces**. 
+The repository contains a **CNN model built to classify real and artificial images of human faces**. 
 
 The purpose of this project is the academic learning of adressing a machine learning task.
 
@@ -35,6 +35,3 @@ Exampel from the model:
 `fake = "/content/drive/My Drive/archive/real_and_fake_face/training_fake"`
 
 **The setup is complete and you can run the code**
-
-Tidligere prosjekt: 
-https://github.com/Mael7307/Fake-image-detector-CNN-
