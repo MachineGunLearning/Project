@@ -3,13 +3,13 @@ This project is one of the deliverables in the couse TDT4173 - Machine Learning 
 
 The purpose of this project is the academic learning of adressing a machine learning task.
 
-## Running the application 
+### Running the application 
 The application can be run with a Virtual Machine, the following setup is with Google Colab: 
 
 First you have to upload the dataset from kaggle on Google Drive:
 https://www.kaggle.com/ciplab/real-and-fake-face-detection
 
-##### Fetch the dataset from Google Colab
+**Fetch the dataset from Google Colab**
 
 1. Executing the below code which will provide you with an authentication link
 
