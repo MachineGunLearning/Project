@@ -4,14 +4,12 @@ This project is one of the deliverables in the couse TDT4173 - Machine Learning 
 The purpose of this project is the academic learning of adressing a machine learning task.
 
 ## Running the application 
-You can run and test the code with a Virtual Machine or iPhyton notebook. 
+The application can be run with a Virtual Machine, the following setup is with Google Colab: 
 
-To run the application you have to download the dataset from kaggle:
+First you have to upload the dataset from kaggle on Google Drive:
 https://www.kaggle.com/ciplab/real-and-fake-face-detection
 
-### Fetch the dataset
-
-When saving the dataset on google drive you can access it in Google Colab with the following code: 
+### Fetch the dataset from Google Colab
 
 1. Executing the below code which will provide you with an authentication link
 
@@ -32,11 +30,12 @@ colab import drive
 Once the Drive is mounted, you’ll get the message “Mounted at /content/drive”, and you’ll be able to browse through the contents of your Drive from the file-explorer pane.
 
 You can then access the dataset as usual: 
-accessing = "write the path to de folder here"
+`accessing = "write the path to de folder here"`
 
 Exampel from the model:
 `fake = "/content/drive/My Drive/archive/real_and_fake_face/training_fake"`
 
+**The setup is complete and you can run the code**
 
 Tidligere prosjekt: 
 https://github.com/Mael7307/Fake-image-detector-CNN-
