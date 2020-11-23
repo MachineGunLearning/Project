@@ -1,5 +1,7 @@
 # Project
 This project is one of the deliverables in the couse TDT4173 - Machine Learning at NTNU. 
+\
+The final deliverable is a CNN model built to classify real images and artificial images. 
 
 The purpose of this project is the academic learning of adressing a machine learning task.
 
