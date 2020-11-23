@@ -24,12 +24,11 @@ drive.mount('/content/drive', force_remount=True)
 
 4. Allow Google Drive Stream access to your Google Account
 
-5. Copy the code displayed, paste it in the text box as shown below, and press Enter
+5. Copy the code displayed, paste it in the text box as shown below, and press Enter colab import drive
 
-colab import drive
-Once the Drive is mounted, you’ll get the message “Mounted at /content/drive”, and you’ll be able to browse through the contents of your Drive from the file-explorer pane.
+Once the Drive is mounted, you’ll get the message **“Mounted at /content/drive”**, and you’ll be able to browse through the contents of your Drive from the file-explorer pane. 
 
-You can then access the dataset as usual: 
+Now you can interact with your Google Drive as if it was a folder. : 
 `accessing = "write the path to de folder here"`
 
 Exampel from the model:
