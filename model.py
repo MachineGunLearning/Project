@@ -60,41 +60,36 @@ def create_test_data():
 train_data = create_training_data()
 test_data = create_test_data()
 
-#Preprocessing 
-X = []
-y = []
-
-for i in train_data:
-    X.append(i[0])
-    y.append(i[1])
-    
-#print(X[0].reshape(-1, 50, 50, 1))
-X = np.array(X).reshape(-1, img_size, img_size, 1)
-
-#divide by 255 to squish values to 0 - 1
-X = X/255.0
-y = np.array(y)
-
-#we made X and y np arrays to be able to feed into the model
-test_pic = []
+#Seperating features and labels, to be able to feed into the model
+train_img = []
+train_lab = []
+test_img = []
 test_lab = []
 
-
+for i in train_data:
+    train_img.append(i[0])
+    train_lab.append(i[1])
+    
 for i in test_data:
-    test_pic.append(i[0])
+    test_img.append(i[0])
     test_lab.append(i[1])
-        
-#print(X[0].reshape(-1, 50, 50, 1))
-test_pic = np.array(test_pic).reshape(-1, img_size, img_size, 1)
+    
+#Reshape image 
+train_img = np.array(train_img).reshape(-1, img_size, img_size, 1)
+test_img = np.array(test_img).reshape(-1, img_size, img_size, 1)
 
+#Divide by 255 to squish values to 0 - 1
+train_img = train_img/255.0
+train_lab = np.array(train_lab)
 
-#divide by 255 to squish values to 0 - 1
-test_pic = test_pic/255.0
+test_img = test_img/255.0
 test_lab = np.array(test_lab)
 
+
+#Building our CNN model
 model = Sequential()
 
-model.add(Conv2D(192,(5,3), input_shape=X.shape[1:], activation="relu")) 
+model.add(Conv2D(192,(5,3), input_shape=train_img.shape[1:], activation="relu")) 
 model.add(MaxPooling2D(pool_size=(2,2)))
 
 model.add(Dropout(0.6))
@@ -113,21 +108,23 @@ opt = keras.optimizers.Adam(learning_rate=0.0002)
 
 model.compile(loss = "binary_crossentropy", optimizer = opt, metrics = ['accuracy'])
 
-history = model.fit(X, y, batch_size = 32, epochs = 70, verbose = 1, validation_split = 0.2)
-
+#Training the model
+history = model.fit(train_img, train_lab, batch_size = 32, epochs = 70, verbose = 1, validation_split = 0.2)
 
 model.save('my_cnn', save_format='tf')
 
 model2 = keras.models.load_model('my_cnn') 
 print(model2.summary())
 
-yhat_probs = model2.predict(test_pic, verbose=0)
+#Predictions
+yhat_probs = model2.predict(test_img, verbose=0)
 # predict crisp classes for test set
-yhat_classes = model2.predict_classes(test_pic, verbose=0)
+yhat_classes = model2.predict_classes(test_img, verbose=0)
 # reduce to 1d array
 yhat_probs = yhat_probs[:, 0]
 yhat_classes = yhat_classes[:, 0]
- 
+
+#Printing metrices
 # accuracy: (tp + tn) / (p + n)
 accuracy = accuracy_score(test_lab, yhat_classes)
 print('Accuracy: %f' % accuracy)
