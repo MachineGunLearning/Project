@@ -9,7 +9,7 @@ The application can be run with a Virtual Machine, the following setup is with G
 First you have to upload the dataset from kaggle on Google Drive:
 https://www.kaggle.com/ciplab/real-and-fake-face-detection
 
-### Fetch the dataset from Google Colab
+##### Fetch the dataset from Google Colab
 
 1. Executing the below code which will provide you with an authentication link
 
@@ -28,9 +28,7 @@ drive.mount('/content/drive', force_remount=True)
 
 Once the Drive is mounted, you’ll get the message **“Mounted at /content/drive”**, and you’ll be able to browse through the contents of your Drive from the file-explorer pane. 
 
-Now you can interact with your Google Drive as if it was a folder. : 
-`accessing = "write the path to de folder here"`
-
+Now you can interact with your Google Drive as if it was a folder.
 Exampel from the model:
 `fake = "/content/drive/My Drive/archive/real_and_fake_face/training_fake"`
 
